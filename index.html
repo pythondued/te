@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Edit – Smart Online Text Editor</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    // Toggle dark mode
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+
+  <div class="min-h-screen flex items-center justify-center p-4">
+    <div class="text-center bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 max-w-xl w-full">
+      
+      <!-- Logo -->
+      <div class="mb-4">
+        <img src="https://img.icons8.com/ios-filled/100/000000/edit-file.png" alt="Text Edit Logo" class="mx-auto w-16 h-16 dark:invert" />
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-4xl font-extrabold mb-4">Welcome to <span class="text-blue-600 dark:text-blue-400">Text Edit</span></h1>
+      
+      <!-- Description -->
+      <p class="text-lg mb-6">
+        <strong>Text Edit</strong> is a fast, clean, and powerful online text editor available at 
+        <a href="https://t-e.onrender.com" class="underline text-blue-500 hover:text-blue-700">t-e.onrender.com</a>.
+        Write, edit, and save your notes instantly with no login required.
+      </p>
+      
+      <!-- Call to Action -->
+      <a href="https://t-e.onrender.com" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl text-lg hover:bg-blue-700 transition">
+        Open Text Edit
+      </a>
+
+      <!-- Additional Info -->
+      <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">No installation. Works on all devices. Built for simplicity.</p>
+
+      <!-- Dark Mode Toggle -->
+      <button onclick="toggleDarkMode()" class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07 4.95l-.71-.71M6.34 6.34l-.71-.71m12.02 12.02l-.71-.71M6.34 17.66l-.71-.71M21 12a9 9 0 11-9-9" />
+        </svg>
+        Toggle Dark Mode
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
